@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
+import { Provider } from './StateManagement/StateManagement';
 
-import Graph from "./Components/Graph/Graph"
-
-import {getDataSet1, getDataSet2, getDataSet3} from './DateRepository/DataRepository'
+import Graph from './Components/Graph/Graph';
+import DataSetController from './Components/DataSetController/DataSetController'
 
 const App: React.FC = () => {
+
   return (
-    <div className="App">
+  <div className="App">
+    <Provider>
+      <DataSetController></DataSetController>
       <Graph></Graph>
-    </div>
+    </Provider>
+  </div>
   );
 }
 
