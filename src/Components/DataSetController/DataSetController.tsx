@@ -43,7 +43,6 @@ const DataSetController = () => {
         );
 
         setValue(DataSetOptions.DataSet1);
-
         break;
       }
       case DataSetOptions.DataSet2: {
@@ -54,7 +53,6 @@ const DataSetController = () => {
         );
 
         setValue(DataSetOptions.DataSet2);
-
         break;
       }
       case DataSetOptions.DataSet3: {
@@ -65,7 +63,6 @@ const DataSetController = () => {
         );
 
         setValue(DataSetOptions.DataSet3);
-
         break;
       }
       default:
@@ -74,20 +71,23 @@ const DataSetController = () => {
   };
 
   const [value, setValue] = React.useState(DataSetOptions.DataSet1);
+  const getCurrentDataSet = () => {
+    return value;
+  };
 
   return (
     <Consumer>
       {appContext => (
         <div className={classes.container}>
-          <div className={classes.instructions}>
+          <div id="instructions" className={classes.instructions}>
             Labforward Graph detected 3 data sets currently in your workspace.
-            Currently {kebabCaseToTitleCase(value)} is shown, select your data
-            set below.
+            Currently {kebabCaseToTitleCase(getCurrentDataSet())} is shown,
+            select your data set below.
           </div>
           <FormControl component="fieldset">
             <RadioGroup
               aria-label="data set"
-              name="data set"
+              name="data_set"
               value={value}
               onChange={event => handleChange(event, appContext)}
               row
