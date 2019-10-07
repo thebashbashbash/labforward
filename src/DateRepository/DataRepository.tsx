@@ -334,6 +334,13 @@ export const dataSet3 = {
   headers: {},
   config: {}
 };
+
+export enum DataSetOptions {
+  DataSet1 = "data_set_1",
+  DataSet2 = "data_set_2",
+  DataSet3 = "data_set_3"
+}
+
 const dotMultiplicationWithIdentityVector = (
   a: number[],
   identityVector: number[]
@@ -342,14 +349,17 @@ const dotMultiplicationWithIdentityVector = (
     return element * identityVector[index];
   });
 };
+
 dataSet1.data.signal = dotMultiplicationWithIdentityVector(
   dataSet1.data.data,
   dataSet1.data.signal
 );
+
 dataSet2.data.signal = dotMultiplicationWithIdentityVector(
   dataSet2.data.data,
   dataSet2.data.signal
 );
+
 dataSet3.data.signal = dotMultiplicationWithIdentityVector(
   dataSet3.data.data,
   dataSet3.data.signal

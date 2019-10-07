@@ -7,7 +7,11 @@ export interface State {
   signal: number[];
 }
 
-export type Action = { type: "setNewDataSet"; newState: State };
+export enum ActionTypes {
+  setNewDataSet = "setNewDataSet"
+}
+
+export type Action = { type: ActionTypes.setNewDataSet; newState: State };
 
 const initialState: State = {
   data: dataSet1.data.data,
@@ -16,7 +20,7 @@ const initialState: State = {
 
 const reducer = (state: State = initialState, action: Action) => {
   switch (action.type) {
-    case "setNewDataSet": {
+    case ActionTypes.setNewDataSet: {
       return { data: action.newState.data, signal: action.newState.signal };
     }
     default:

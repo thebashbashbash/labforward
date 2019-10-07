@@ -1,7 +1,9 @@
 import React from "react";
-import { Consumer, Action } from "../../StateManagement/StateManagement";
-
-import Button from "@material-ui/core/Button";
+import {
+  Consumer,
+  Action,
+  ActionTypes
+} from "../../StateManagement/StateManagement";
 
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
@@ -11,7 +13,8 @@ import FormControl from "@material-ui/core/FormControl";
 import {
   dataSet1,
   dataSet2,
-  dataSet3
+  dataSet3,
+  DataSetOptions
 } from "../../DateRepository/DataRepository";
 
 interface Props {}
@@ -22,16 +25,43 @@ const DataSetController = (props: Props) => {
     data: number[],
     signal: number[]
   ) => {
-    dispatch({ type: "setNewDataSet", newState: { data, signal } });
+    dispatch({ type: ActionTypes.setNewDataSet, newState: { data, signal } });
   };
 
-  const handleChange = (event: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setValue(event.target.value);
+  const handleChange = (
+    event: {
+      target: { value: React.SetStateAction<string> };
+    },
+    appContext: { dispatch: (action: Action) => void }
+  ) => {
+    if (event.target.value === DataSetOptions.DataSet1) {
+      changeDataSet(
+        appContext.dispatch,
+        dataSet1.data.data,
+        dataSet1.data.signal
+      );
+
+      setValue(DataSetOptions.DataSet1);
+    } else if (event.target.value === DataSetOptions.DataSet2) {
+      changeDataSet(
+        appContext.dispatch,
+        dataSet2.data.data,
+        dataSet2.data.signal
+      );
+
+      setValue(DataSetOptions.DataSet2);
+    } else if (event.target.value === DataSetOptions.DataSet3) {
+      changeDataSet(
+        appContext.dispatch,
+        dataSet3.data.data,
+        dataSet3.data.signal
+      );
+
+      setValue(DataSetOptions.DataSet3);
+    }
   };
 
-  const [value, setValue] = React.useState("female");
+  const [value, setValue] = React.useState(DataSetOptions.DataSet1);
 
   return (
     <Consumer>
@@ -39,76 +69,32 @@ const DataSetController = (props: Props) => {
         <div>
           <FormControl component="fieldset">
             <RadioGroup
-              aria-label="position"
-              name="position"
+              aria-label="data set"
+              name="data set"
               value={value}
-              onChange={handleChange}
+              onChange={event => handleChange(event, appContext)}
               row
             >
               <FormControlLabel
-                value="top"
+                value={DataSetOptions.DataSet1}
                 control={<Radio color="primary" />}
-                label="Top"
-                labelPlacement="top"
-              />
-              <FormControlLabel
-                value="start"
-                control={<Radio color="primary" />}
-                label="Start"
-                labelPlacement="start"
-              />
-              <FormControlLabel
-                value="bottom"
-                control={<Radio color="primary" />}
-                label="Bottom"
+                label="Data set 1"
                 labelPlacement="bottom"
               />
               <FormControlLabel
-                value="end"
+                value={DataSetOptions.DataSet2}
                 control={<Radio color="primary" />}
-                label="End"
-                labelPlacement="end"
+                label="Data set 2"
+                labelPlacement="bottom"
+              />
+              <FormControlLabel
+                value={DataSetOptions.DataSet3}
+                control={<Radio color="primary" />}
+                label="Data set 3"
+                labelPlacement="bottom"
               />
             </RadioGroup>
           </FormControl>
-          <Button
-            variant="contained"
-            onClick={() =>
-              changeDataSet(
-                appContext.dispatch,
-                dataSet1.data.data,
-                dataSet1.data.signal
-              )
-            }
-          >
-            Dataset 1
-          </Button>
-
-          <Button
-            variant="contained"
-            onClick={() =>
-              changeDataSet(
-                appContext.dispatch,
-                dataSet2.data.data,
-                dataSet2.data.signal
-              )
-            }
-          >
-            Dataset 2
-          </Button>
-
-          <Button
-            variant="contained"
-            onClick={() =>
-              changeDataSet(
-                appContext.dispatch,
-                dataSet3.data.data,
-                dataSet3.data.signal
-              )
-            }
-          >
-            Dataset 3
-          </Button>
         </div>
       )}
     </Consumer>
