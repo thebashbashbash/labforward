@@ -1,8 +1,8 @@
 import * as React from "react";
 
 export interface State {
-  data: Array<number>,
-  signal: Array<number>
+  data: number[],
+  signal: number[]
 }
 
 export type Action = { type: "setNewDataSet", newState : State};
@@ -32,7 +32,7 @@ export const Context = React.createContext<{
 
 export const Consumer = Context.Consumer;
 
-export function Provider(props: any) {
+export const Provider = (props: any) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const value = { state, dispatch };
 
@@ -40,3 +40,9 @@ export function Provider(props: any) {
     <Context.Provider value={value}>{props.children}</Context.Provider>
   );
 }
+
+const vectorDotMultiplication = (a: number[], b: number[]) =>{
+
+}
+
+
