@@ -39,6 +39,6 @@ describe("Mount DataSetController", () => {
     dataSet1Selector.simulate("change", { target: { value: "data_set_3" } });
 
     instructions = wrapper.find("#instructions");
-    console.log(instructions.get(0).props.children[1]);
+    expect(instructions.get(0).props.children[1]).toEqual("data set 3");
   });
 });
