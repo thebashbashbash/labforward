@@ -17,8 +17,8 @@ if you have any questions contact: contact@basharmengana.com
 # Defenition of done
 
 1. The end user (scientist) is able to detect peaks by glancing a graph of their data.
-2. The MVP should be written in React with React Context instead of Redux in order to
-   reduce the complexity of the project.
+2. The MVP should be written in React with React Context instead of Redux because I believe
+   the new React Context API and React Hooks are the future.
 3. The end user should be able to switch between
    their data sets.
 4. All components should be tested for successfully using Jest/Enzyme.
