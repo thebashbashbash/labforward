@@ -24,7 +24,7 @@ const reducer = (state: State = initialState, action: Action) => {
       return { data: action.newState.data, signal: action.newState.signal };
     }
     default:
-      throw new Error();
+      throw new Error("Action type not supported!");
   }
 };
 

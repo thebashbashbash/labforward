@@ -34,30 +34,42 @@ const DataSetController = (props: Props) => {
     },
     appContext: { dispatch: (action: Action) => void }
   ) => {
-    if (event.target.value === DataSetOptions.DataSet1) {
-      changeDataSet(
-        appContext.dispatch,
-        dataSet1.data.data,
-        dataSet1.data.signal
-      );
+    switch (event.target.value) {
+      case DataSetOptions.DataSet1: {
+        changeDataSet(
+          appContext.dispatch,
+          dataSet1.data.data,
+          dataSet1.data.signal
+        );
 
-      setValue(DataSetOptions.DataSet1);
-    } else if (event.target.value === DataSetOptions.DataSet2) {
-      changeDataSet(
-        appContext.dispatch,
-        dataSet2.data.data,
-        dataSet2.data.signal
-      );
+        setValue(DataSetOptions.DataSet1);
 
-      setValue(DataSetOptions.DataSet2);
-    } else if (event.target.value === DataSetOptions.DataSet3) {
-      changeDataSet(
-        appContext.dispatch,
-        dataSet3.data.data,
-        dataSet3.data.signal
-      );
+        break;
+      }
+      case DataSetOptions.DataSet2: {
+        changeDataSet(
+          appContext.dispatch,
+          dataSet2.data.data,
+          dataSet2.data.signal
+        );
 
-      setValue(DataSetOptions.DataSet3);
+        setValue(DataSetOptions.DataSet2);
+
+        break;
+      }
+      case DataSetOptions.DataSet3: {
+        changeDataSet(
+          appContext.dispatch,
+          dataSet3.data.data,
+          dataSet3.data.signal
+        );
+
+        setValue(DataSetOptions.DataSet3);
+
+        break;
+      }
+      default:
+        throw new Error("Data set not supported!");
     }
   };
 
