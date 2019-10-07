@@ -17,9 +17,9 @@ import {
   DataSetOptions
 } from "../../DateRepository/DataRepository";
 
-interface Props {}
+import classes from "./DataSetController.module.css";
 
-const DataSetController = (props: Props) => {
+const DataSetController = () => {
   const changeDataSet = (
     dispatch: (action: Action) => void,
     data: number[],
@@ -78,7 +78,12 @@ const DataSetController = (props: Props) => {
   return (
     <Consumer>
       {appContext => (
-        <div>
+        <div className={classes.container}>
+          <div className={classes.instructions}>
+            Labforward Graph detected 3 data sets currently in your workspace.
+            Currently {kebabCaseToTitleCase(value)} is shown, select your data
+            set below.
+          </div>
           <FormControl component="fieldset">
             <RadioGroup
               aria-label="data set"
@@ -111,6 +116,13 @@ const DataSetController = (props: Props) => {
       )}
     </Consumer>
   );
+};
+
+const kebabCaseToTitleCase = (kebabCaseString: string) => {
+  return kebabCaseString
+    .toLowerCase()
+    .split("_")
+    .join(" ");
 };
 
 export default DataSetController;
