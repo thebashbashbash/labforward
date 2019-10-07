@@ -22,8 +22,7 @@ if you have any questions contact: contact@basharmengana.com
 3. The end user should be able to switch between
    their data sets.
 4. All components should be tested for successfully using Jest/Enzyme.
-5. A very simple test that tests that it is possible to test a shallow state change using Jest/Enzyme (test should be improved when adding real endpoints for data by doing a deeper
-   test of state change).
+5. A very simple test that tests that it is possible to test a shallow state change using Jest/Enzyme (test should be improved by doing a deeper test of state change and by using jest-axios-mock when adding real endpoints).
 
 # Project details
 
