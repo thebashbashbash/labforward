@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import {dataSet1} from '../DateRepository/DataRepository'
+import { dataSet1 } from "../DateRepository/DataRepository";
 
 export interface State {
-  data: number[],
-  signal: number[]
+  data: number[];
+  signal: number[];
 }
 
-export type Action = { type: "setNewDataSet", newState : State};
+export type Action = { type: "setNewDataSet"; newState: State };
 
 const initialState: State = {
   data: dataSet1.data.data,
@@ -38,7 +38,5 @@ export const Provider = (props: any) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const value = { state, dispatch };
 
-  return (
-    <Context.Provider value={value}>{props.children}</Context.Provider>
-  );
-}
+  return <Context.Provider value={value}>{props.children}</Context.Provider>;
+};
