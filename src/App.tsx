@@ -9,7 +9,7 @@ import DataSetController from "./Components/DataSetController/DataSetController"
 const App: React.FC = () => {
   return (
     <div className={classes.container}>
-      <div className={classes.header}>Labforward Graph</div>
+      <div className={classes.header}>Labforward: peak detection</div>
       <Provider>
         <DataSetController></DataSetController>
         <Graph></Graph>
