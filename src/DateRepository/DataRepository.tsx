@@ -31,3 +31,15 @@ export const dataSet3 = {
     headers: {},
     config: {},
 }
+
+const dotMultiplicationWithIdentityVector = (a: number[], identityVector: number[]) =>{
+  return a.map((element, index) => {
+    return element * identityVector[index]
+  })
+}
+
+dataSet1.data.signal = dotMultiplicationWithIdentityVector(dataSet1.data.data, dataSet1.data.signal)
+dataSet2.data.signal = dotMultiplicationWithIdentityVector(dataSet2.data.data, dataSet2.data.signal)
+dataSet3.data.signal = dotMultiplicationWithIdentityVector(dataSet3.data.data, dataSet3.data.signal)
+
+

@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import {dataSet1} from '../DateRepository/DataRepository'
+
 export interface State {
   data: number[],
   signal: number[]
@@ -8,8 +10,8 @@ export interface State {
 export type Action = { type: "setNewDataSet", newState : State};
 
 const initialState: State = {
-  data: [],
-  signal: []
+  data: dataSet1.data.data,
+  signal: dataSet1.data.signal
 };
 
 const reducer = (state: State = initialState, action: Action) => {
@@ -40,9 +42,3 @@ export const Provider = (props: any) => {
     <Context.Provider value={value}>{props.children}</Context.Provider>
   );
 }
-
-const vectorDotMultiplication = (a: number[], b: number[]) =>{
-
-}
-
-
