@@ -17,8 +17,8 @@ const Graph = () => {
       {appContext => (
         <div className={classes.container}>
           <VictoryChart
-            height={300}
-            width={400}
+            height={200}
+            width={300}
             // domain={{ y: [1, Math.max(...appContext.state.data)] }}
             // containerComponent={
             //   <VictoryZoomContainer
