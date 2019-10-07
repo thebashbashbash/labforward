@@ -1,3 +1,4 @@
+// All the data sets are mocked here as JSON response
 export const dataSet1 = {
   data: {
     data: [
@@ -341,6 +342,7 @@ export enum DataSetOptions {
   DataSet3 = "data_set_3"
 }
 
+// Transform the signal through a dot multiplication with the signal
 const dotMultiplicationWithIdentityVector = (
   a: number[],
   identityVector: number[]
@@ -350,6 +352,7 @@ const dotMultiplicationWithIdentityVector = (
   });
 };
 
+// Do the transformation
 dataSet1.data.signal = dotMultiplicationWithIdentityVector(
   dataSet1.data.data,
   dataSet1.data.signal

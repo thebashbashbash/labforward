@@ -19,6 +19,8 @@ import {
 
 import classes from "./DataSetController.module.css";
 
+// Change of state is handled through this controller class
+// Should be rewritten as a class component to enable better testing with Enzyme
 const DataSetController = () => {
   const changeDataSet = (
     dispatch: (action: Action) => void,

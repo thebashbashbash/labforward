@@ -5,6 +5,7 @@ import { Provider } from "./StateManagement/StateManagement";
 import Graph from "./Components/Graph/Graph";
 import DataSetController from "./Components/DataSetController/DataSetController";
 
+// All the CSS classes are defined separately according to the BEM style
 const App: React.FC = () => {
   return (
     <div className={classes.container}>

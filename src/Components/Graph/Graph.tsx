@@ -11,10 +11,14 @@ import { Consumer } from "../../StateManagement/StateManagement";
 
 import classes from "./Graph.module.css";
 
+// Enable an experimental zoom function by removing comment on row 7 above and the commented
+// selection below in VictoryChart component
 const Graph = () => {
   return (
     <Consumer>
       {appContext => (
+        // TODO: improve layout of the graph, currently solved with margin but this
+        // is a poor solution and should be improved
         <div className={classes.container}>
           <VictoryChart
             height={200}
