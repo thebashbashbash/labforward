@@ -18,7 +18,8 @@ if you have any questions contact: contact@basharmengana.com
 
 The end user (scientist) is able to detect peaks by glancing a graph of their data.
 The MVP should be written in React with React Context instead of Redux in order to
-reduce the complexity of the project.
+reduce the complexity of the project. The end user should be able to switch between
+their data sets.
 
 # Project details
 
