@@ -82,8 +82,8 @@ const DataSetController = () => {
       {appContext => (
         <div className={classes.container}>
           <div id="instructions" className={classes.instructions}>
-            Labforward Graph detected 3 data sets currently in your workspace.
-            Currently {kebabCaseToTitleCase(getCurrentDataSet())} is shown,
+            Labforward peak detection detected 3 data sets in your workspace.
+            Currently {kebabCaseToTitleCase(getCurrentDataSet())} is shown in the graph,
             select your data set below.
           </div>
           <FormControl component="fieldset">
