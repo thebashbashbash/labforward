@@ -73,9 +73,6 @@ const DataSetController = () => {
   };
 
   const [value, setValue] = React.useState(DataSetOptions.DataSet1);
-  const getCurrentDataSet = () => {
-    return value;
-  };
 
   return (
     <Consumer>
@@ -83,7 +80,7 @@ const DataSetController = () => {
         <div className={classes.container}>
           <div id="instructions" className={classes.instructions}>
             Labforward peak detection detected 3 data sets in your workspace.
-            Currently {kebabCaseToTitleCase(getCurrentDataSet())} is shown in the graph,
+            Currently {kebabCaseToTitleCase(value)} is shown in the graph,
             select your data set below.
           </div>
           <FormControl component="fieldset">

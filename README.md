@@ -22,7 +22,8 @@ if you have any questions contact: contact@basharmengana.com
 3. The end user should be able to switch between
    their data sets.
 4. All components should be tested for successfully rendering, using Jest/Enzyme.
-5. A simple test that checks that it is possible to change the state (=change data set) using Jest/Enzyme. Future improvement: this test should be improved by rewriting it so that the test actually changes the state in the state management class (in a mock manner with Jest/Enzyme) by using React Context (this requires turning DataSetController into a class component). Future improvement: use jest-axios-mock when adding real endpoints.
+5. Use material UI for all UI component. Use Victory chart for rendering graph.
+6. A simple test that checks that it is possible to change the state (=change data set) using Jest/Enzyme. Future improvement: this test should be improved by rewriting it so that the test actually changes the state in the state management class (in a mock manner with Jest/Enzyme) by using React Context (this requires turning DataSetController into a class component). Future improvement: use jest-axios-mock when adding real endpoints.
 
 # Project details
 
